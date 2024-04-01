@@ -1,0 +1,145 @@
+/* 90s-inspired styles */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex; /* Gebruik flexbox voor de hoofdindeling */
+}
+
+.left-menu {
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-menu ul li {
+    margin-bottom: 10px;
+}
+
+.left-menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.page-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: left;
+    color: #ffcc00;
+}
+
+p {
+    font-size: 18px;
+}
+
+ul {
+    list-style: square;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+#image {
+    width: 25%;
+    float: left;
+    border-radius: 25%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	/* width: 50%; */
+	border-radius: 10%;
+	text-align: center;
+}
+
+.small {
+	/* float: right; */
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	border-radius: 10%;
+}
+
+.left-menu {
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+	margin-right: 20px;
+    box-sizing: border-box;
+    display: flex; /* Maak het menu een flex-container */
+    flex-direction: column; /* Stapel de items verticaal op in het menu */
+}
+
+.left-menu ul {
+    list-style: none;
+	text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.left-menu ul li {
+	margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.left-menu a {
+    text-decoration: none;
+	color: #ffcc00; 
+    font-size: 20px; /* Pas de lettergrootte aan */
+}
+
+.left-menu a:hover {
+	/* color: #fff; Verander de kleur bij hover */
+    font-weight: bold; /* Maak de tekst vet bij hover */
+}
+
+.overflow-columns {
+	column-count: 2; /* Set the number of columns */
+	column-gap: 10px; /* Optional: Set the gap between columns */
+	max-width: 50%; /* Ensure the element doesn't exceed the width of its container */
+	margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+.index {
+	column-count: 1; /* Set the number of columns */
+	max-width: 50%; /* Ensure the element doesn't exceed the width of its container */
+  }

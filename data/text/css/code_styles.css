@@ -1,0 +1,78 @@
+/* 90s-inspired styles with an old editor vibe */
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #00ff00;
+}
+
+p {
+    font-size: 18px;
+}
+
+ul {
+    list-style: square;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+/* Code block styles */
+code {
+    display: block;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+.keyword {
+    color: #ffcc00; /* Keyword color */
+}
+
+.comment {
+    color: #888; /* Comment color */
+}
+
+.string {
+    color: #0f0; /* String color */
+}
+
+.number {
+    color: #f0f; /* Number color */
+}
+
+
+#image {
+	float: right;
+	margin-left: auto;
+	margin-right: auto;
+	width: 10%;
+	border-radius: 10%;
+}
+
+/* Add more classes to mimic different syntax highlightings */

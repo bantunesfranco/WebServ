@@ -1,0 +1,54 @@
+TODO:
+- Root shit
+	The root  base directory for the entire server. 
+	It serves as the default root for all locations unless overridden in specific location blocks.
+	The location / block inherits the server-level root unless overwritte/path/to/server/root; directive at the server level sets then in the block.
+
+- Redirects
+	HTTP Status Codes: Redirects are implemented using HTTP status codes. The most common status codes for redirects are:
+		301 Moved Permanently: Indicates a permanent redirect.
+		302 Found (or 307 Temporary Redirect): Indicates a temporary redirect. 
+		Browsers may not cache this, and the original URL may be used in future requests.
+	Location Header: The server sends a response with the appropriate status code along with a Location header that contains the new URL.
+		response.setHeader("Location", "http://" + ("Host") + req.path);
+
+- dir listing (if 404 and dir listing == 1, call script with dir=.... in query string) -Carlo
+	"Turn on or off directory listing" refers to the ability to display a list of files within a directory 
+	when the client requests a URL that corresponds to a directory rather than a specific file. Directory 
+	listing is also known as directory browsing or index listing.
+
+- Set a default file to answer if the request is a directory
+	When directory listing is turned on, and a client requests a URL that maps to a directory (e.g., http://example.com/directory/), 
+	the web server generates and displays a page containing a list of files and subdirectories within that directory. 
+	Each file or subdirectory is typically presented as a clickable link.
+
+- Research how to test
+
+- cookie script -Bruno
+
+- cleanup includes
+
+DONE:
+- Delete (Bruno)
+- finish config parser (check for at least all mandatory settings in location / and server) -Bruno
+- Error pages - add check on defined error pages for server 
+- change scripts with root -Bruno
+- add PID to connection (Bruno)
+- change scripts with root -Bruno
+
+ERROR CODES TO CONSIDER:
+408 Request Timeout
+413 Payload Too Large
+	The 413 Payload Too Large status code means the server refuses to process the request because 
+	the request payload is larger than the server is able or willing to process. While the server 
+	may close the connection to prevent the client from continuing the request, it should generate 
+	a Retry-After header field and after how long can the client retry.
+429 Too Many Requests
+501/418 Not Implemented
+
+CHECK/THOUGHTS:
+- close connection header CGI
+- check cgi timeout
+- only update nr of times visited when GET request with .html extension. That way it would maybe make some more sense to the user. 
+
+get blijft nu in reaading hangen 

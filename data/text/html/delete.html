@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/90s_styles.css">
+	<title>Delete File</title>
+</head>
+<body>
+	<nav class="left-menu">
+		<ul>
+			<li><a href="/index.html"><img class="small" src="/cookie.png"></a></li>
+			<li><a href="/upload.html">Upload</a></li>
+			<li><a href="/delete.html">Delete</a></li>
+			<li><a href="/other.html">Cookies</a></li>
+			<li><a href="/sockets.html">Sockets</a></li>
+			<li><a href="/epoll.html">Epoll</a></li>
+		</ul>
+	</nav>
+	<div class="index"></div>
+</body>
+<script>
+	const url = `/select.py?file=delete`;
+	const listElement = document.querySelector(".index");
+	
+	fetch(url, { method: 'GET' })
+	.then(response => response.text())
+	.then(data => {
+		const parser = new DOMParser();
+		const htmlDoc = parser.parseFromString(data, 'text/html');
+		const bodyContent = htmlDoc.querySelector('div').innerHTML;
+
+		listElement.innerHTML += bodyContent;
+	})
+
+	function deleteFile() {
+		event.preventDefault();
+
+		const radioButtons = document.getElementsByName('filename');
+		var filename =""
+	
+		for (const button of radioButtons) {
+			if (button.checked) {
+				filename = button.value;
+				break;
+			}
+		}
+
+		const deleteUrl = `/cgi-bin/delete.sh?filename=${encodeURIComponent(filename)}`;
+
+		let response = fetch(deleteUrl, { method: 'DELETE' })
+			.then(response => response.text())
+			.then(data => { document.body.innerHTML = data; })
+	}
+</script>
+</html>
